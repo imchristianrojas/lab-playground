@@ -4,39 +4,49 @@ import matplotlib.pyplot as plt
 
 
 
-def monty_hall(switch: bool = False) -> bool:
-  doors = [1,2,3]
-  car_door = random.choice(doors)
-  chosen_door = random.choice(doors)
+def monty_hall(switch=False):
+    doors = [1, 2, 3]
+    car = random.choice(doors)
+    choice = random.choice(doors)
 
-  if switch:
-    return chosen_door != car_door
-  else:
-    return chosen_door == car_door
+    # Host opens a door that:
+    #  1. Is not the player's choice
+    #  2. Does not contain the car
+    remaining = [d for d in doors if d != choice and d != car]
+    host_opens = random.choice(remaining)
 
-def monte_carlo_simulation(n: int = 1000) -> float:
-  wins_switch = 0
-  wins_no_switch = 0
-  for _ in range(n):
-    win_switch = monty_hall(switch=True)
-    win_no_switch = monty_hall(switch=False)
-    if win_switch:
-      wins_switch += 1
-    if win_no_switch:
-      wins_no_switch += 1
-  return wins_switch / n, wins_no_switch / n
+    # If switching, player picks the last unopened door
+    if switch:
+        final_choice = [d for d in doors if d not in (choice, host_opens)][0]
+    else:
+        final_choice = choice
 
-def visualize_results(wins_switch: float, wins_no_switch: float) -> None:
+    return final_choice == car
+
+
+def monte_carlo_simulation(n=100000):
+    switch_wins = 0
+    stay_wins = 0
+    for _ in range(n):
+        if monty_hall(switch=True):
+            switch_wins += 1
+        if monty_hall(switch=False):
+            stay_wins += 1
+    return switch_wins/n, stay_wins/n
+
+
+def visualize_results(wins_switch: float, wins_no_switch: float, n: int) -> None:
   plt.figure(figsize=(10, 6))
   plt.bar(['Switch', 'No Switch'], [wins_switch, wins_no_switch])
   plt.xlabel('Strategy')
   plt.ylabel('Win Rate')
-  plt.title('Monty Hall Problem')
+  plt.title(f'Monty Hall Problem (Trials={n})')
   plt.show()
 
 if __name__ == "__main__":
-  wins_switch, wins_no_switch = monte_carlo_simulation()
+  n = 1000
+  wins_switch, wins_no_switch = monte_carlo_simulation(n)
   print(f"Wins with switch: {wins_switch}")
   print(f"Wins without switch: {wins_no_switch}")
-  visualize_results(wins_switch, wins_no_switch)  
+  visualize_results(wins_switch, wins_no_switch,n)  
 
