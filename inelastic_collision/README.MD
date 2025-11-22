@@ -15,4 +15,4 @@ Disclaimer: I did all the heavy lifiting of the basic physics behind this simula
 
 TODO: add parameters user input parameter(mass,velocites, position, maybe accleration?, show energy and momentum?)
 
-![My Preview](images/preview.png)
+![My Preview](images/inelastic_simScreen.png)
