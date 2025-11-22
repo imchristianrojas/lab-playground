@@ -63,8 +63,15 @@ Planned improvements include:
 
 I did the heavy lifting for the physics derivations and logic.  
 However, I **did** use an LLM to help with visualization code and structuring the simulation.
- 
 
-## My little sim lmaooo
+## TODO
+
+- [ ] Add user-configurable parameters  
+- [ ] Show energy and momentum values  
+- [ ] Add more objects  
+- [ ] Add more dimensions  
+- [ ] Add forces / realistic interactions  
+
+## Preview
 
 ![My Preview](images/inelastic_simScreen.png)
