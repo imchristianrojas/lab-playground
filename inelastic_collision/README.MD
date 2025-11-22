@@ -1,18 +1,70 @@
-Motivation: At work today I was reviewing my kenamatics from physics. I relearned to derived them using basic caluclus and some fundemental knowledge like v = dx/dt and a = dv/dt and a few others. I then relearned how to solve for unknown quantities in an inelastic. Through the conservation of momentum and conservation of energy. Anyways I thought it would be cool to make a small simulation to visualize these collisions and their outcomes(energy,final velocity,and combine masses)
+# Inelastic Collision Visualizer
 
-Method: A basic sim where we have two masses M1 and M2 in one dimension. We will have M1 move to right with initial velocity V1 and M2 move to left with initial velocity V2. They will collide and stick together. We will then calculate the final velocity and the combined mass. We will then plot the initial and final velocities and the combined mass.
+## Motivation
 
-Results: We will see the initial and final velocities and the combined mass. We will also see the conservation of momentum and conservation of energy.
+At work today I was reviewing my kinematics from physics. I relearned how to derive the basic motion equations using calculus and fundamental relationships such as:
 
-Conclusion: We will see that the final velocity is the average of the initial velocities. We will also see that the conservation of momentum is conserved. We will also see that the conservation of energy is conserved.
+- \( v = \frac{dx}{dt} \)
+- \( a = \frac{dv}{dt} \)
 
-Future Work: We can add more masses and make the simulation more realistic. We can also add more dimensions and make the simulation more realistic. We can also add more forces and make the simulation more realistic. We can also add more physics and make the simulation more realistic.
+I also revisited how to solve for unknowns in **inelastic collisions** using conservation of momentum. While working through the math, I thought it would be cool to build a small simulation to *visualize* these collisions and show their outcomes — final velocity, combined mass, and changes in kinetic energy.
 
+## Method
 
+The simulation models a simple **1-dimensional perfectly inelastic collision**:
 
-Disclaimer: I did all the heavy lifiting of the basic physics behind this simulation. BUT i did use an LLM to visuailize this experiment.
+- Two masses, \( m_1 \) and \( m_2 \), move along the same line.
+- \( m_1 \) begins with velocity \( v_1 \) and moves to the right.
+- \( m_2 \) begins with velocity \( v_2 \) (or at rest) and moves to the left.
+- When they collide, they stick together and move as a combined mass.
 
+After collision, the final velocity is computed using **conservation of momentum**:
 
-TODO: add parameters user input parameter(mass,velocites, position, maybe accleration?, show energy and momentum?)
+\[
+v_f = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}
+\]
+
+The simulation visualizes the motion, collision, and post-collision movement using SFML.
+
+## Results
+
+From the visualization, you can observe:
+
+- The initial motion of both masses.
+- The final motion of the combined mass.
+- **Total momentum remains conserved**, as expected:
+  \[
+  m_1 v_1 + m_2 v_2 = (m_1 + m_2)v_f
+  \]
+- **Kinetic energy decreases**, which is characteristic of perfectly inelastic collisions.
+
+This provides an intuitive link between the equations and the physical behavior.
+
+## Conclusion
+
+- The simulation correctly demonstrates **momentum conservation**.  
+- It also shows that **kinetic energy is not conserved** in a perfectly inelastic collision.  
+- The final velocity corresponds to the **mass-weighted average** of the initial velocities, not a simple arithmetic average unless the masses are equal.
+
+Overall, this project helped solidify the connection between the equations of motion, conservation laws, and real physical behavior.
+
+## Future Work
+
+Planned improvements include:
+
+- User-input parameters (masses, velocities, positions, acceleration)
+- Displaying energy and momentum numerically on screen
+- Multi-mass sequential collisions
+- Higher-dimensional simulations
+- Support for additional forces (springs, friction, etc.)
+- Real-time energy and momentum graphs
+
+## Disclaimer
+
+I did the heavy lifting for the physics derivations and logic.  
+However, I **did** use an LLM to help with visualization code and structuring the simulation.
+ 
+
+## My little sim lmaooo
 
 ![My Preview](images/inelastic_simScreen.png)
