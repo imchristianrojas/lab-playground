@@ -1,0 +1,44 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "Read 10 pages",
+      "tags": [
+        "learning",
+        "reading"
+      ],
+      "created_at": "2026-02-21T03:49:22.551220+00:00"
+    },
+    {
+      "id": 2,
+      "text": "Testing Notes",
+      "tags": [],
+      "created_at": "2026-02-21T04:07:25.805912+00:00"
+    },
+    {
+      "id": 3,
+      "text": "help",
+      "tags": [],
+      "created_at": "2026-02-21T04:08:20.540179+00:00"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "text": "Ship CLI MVP",
+      "due": "2026-03-01",
+      "done": false,
+      "created_at": "2026-02-21T03:49:22.416197+00:00",
+      "completed_at": null
+    }
+  ],
+  "timer": {
+    "label": "Deep work",
+    "minutes": 50,
+    "started_at": "2026-02-21T03:49:22.474207+00:00"
+  },
+  "counters": {
+    "note_id": 3,
+    "todo_id": 1
+  }
+}
